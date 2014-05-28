@@ -1,3 +1,5 @@
+// ce fichier provient d'un autre webservice que j'ai creer d'apres un tutoriel, je l'utilise encore comme model pour la syntaxe ici
+
 var db = require('./db.js');
 
 var columnNameRegex = /^([a-zA-Z0-9_$]{1,64}\.)?[a-zA-Z0-9_$]{1,64}$/;

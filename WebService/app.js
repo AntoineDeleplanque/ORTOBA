@@ -1,4 +1,4 @@
-var data = require('./bill-data.js');
+var data = require('./ortoba-data.js');
 var express = require('express');
 var app = express();
 
@@ -12,12 +12,19 @@ function dataCallback(res){
     };
 }
 
-
-app.get('/bills',function(req, res){
-    data.listBills(dataCallback());
+app.get('/equipe/getAll',function(req, res){
+    data.getEquipes(dataCallback());
 });
 
-app.get('/bills/:id', function(req, res) {
+app.post('/equipe/add/:nom/:ville', function(req, res){
+    data.addEquipe(req.params.nom, req.params.ville, dataCallback(res));
+});
+
+app.post('/match/add/:IdEquipe1/:ScoreEquipe1/:IdEquipe2/:ScoreEquipe2', function(req, res){
+    data.addMatch(req.params.IdEquipe1, req.params.ScoreEquipe1, req.params.IdEquipe2, req.params.ScoreEquipe2, dataCallback(res));
+});
+
+/*app.get('/bills/:id', function(req, res) {
     data.getBill(req.params.id, dataCallback(res));
 });
 
@@ -67,6 +74,6 @@ app.post('/bills', function(req, res){
 
 app.post('/products', function(req, res){
     data.insertProduct(req.body, dataCallback(res));
-});
+});*/
 
-app.listen(8080);
+app.listen(9000);
