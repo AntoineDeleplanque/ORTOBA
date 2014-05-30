@@ -13,8 +13,12 @@ function dataCallback(res){
 }
 
 app.get('/equipe/getAll',function(req, res){
-    data.getEquipes(dataCallback());
+    data.getEquipes(dataCallback(res));
 });
+
+app.get('/equipe/classement', function(req, res){
+    data.classement(dataCallback(res));
+})
 
 app.post('/equipe/add/:nom/:ville', function(req, res){
     data.addEquipe(req.params.nom, req.params.ville, dataCallback(res));
@@ -76,4 +80,4 @@ app.post('/products', function(req, res){
     data.insertProduct(req.body, dataCallback(res));
 });*/
 
-app.listen(9000);
+app.listen(80);

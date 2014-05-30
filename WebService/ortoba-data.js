@@ -28,3 +28,8 @@ exports.addMacth = function(IdEquipe1, ScoreEquipe1, IdEquipe2, ScoreEquipe2, ca
         callback);
 };
 
+exports.classement = function(callback) {
+    db.query('SELECT * FROM equipes \
+       Order by score_equipe DESC;', callback);
+};
+
