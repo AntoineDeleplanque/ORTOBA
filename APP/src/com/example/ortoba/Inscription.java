@@ -1,18 +1,14 @@
 package com.example.ortoba;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,7 +36,7 @@ public class Inscription extends Activity {
                         try {
         	            	// 1. create HttpClient
         	                HttpClient httpclient = new DefaultHttpClient();
-        	     
+        	                
         	                // 2. make POST request to the given URL
         	                HttpPost httpPost = new HttpPost("http://192.168.1.96/equipe/add/" +((EditText) findViewById(R.id.NomTexte)).getText().toString() +"/"+((EditText)findViewById(R.id.editText2)).getText().toString());
 
@@ -62,5 +58,13 @@ public class Inscription extends Activity {
             }
         });
 		
-    }  
+	
+	Button retour = (Button) findViewById(R.id.RetourButton);
+	retour.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+        	Intent intent = new Intent(Inscription.this, MainActivity.class);
+        	startActivity(intent);
+        }
+    });
+	}
 }
