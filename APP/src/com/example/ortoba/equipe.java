@@ -1,59 +1,62 @@
 package com.example.ortoba;
 
 public class equipe {
-	int id;
-    String nom;
-    String ville;
-    int score;
+	int id_equipe;
+    String nom_equipe;
+    String ville_equipe;
+    int score_equipe;
  
     equipe(int Id, String Nom, String Ville, int Score){
-    	this.id = Id;
+    	this.id_equipe = Id;
 
-    	this.nom = Nom;
+    	this.nom_equipe = Nom;
 
-    	this.ville = Ville;
+    	this.ville_equipe = Ville;
 
-    	this.score = Score;
+    	this.score_equipe = Score;
       }
     
     public int getId()
     {
-    	return id;
+    	return id_equipe;
     }
     
     public void setId(int Id)
     {
-    	id = Id;
+    	id_equipe = Id;
     }
     
     public String getNom()
     {
-    	return nom;
+    	return nom_equipe;
     }
     
     public void setNom( String Nom )
     {
-    	nom = Nom;
+    	nom_equipe = Nom;
     }
     
     public String getVille()
     {
-    	return ville;
+    	return ville_equipe;
     }
     
     public void setVille( String Ville)
     {
-    	ville = Ville;
+    	ville_equipe = Ville;
     }
     
     public int getScore()
     {
-    	return score;
+    	return score_equipe;
     }
     
     public void setScore( int Score )
     {
-    	score = Score;
+    	score_equipe = Score;
     }
     
+    public String toString(){
+    	return this.nom_equipe;
+	}
 }

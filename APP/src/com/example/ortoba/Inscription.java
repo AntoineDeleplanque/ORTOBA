@@ -38,7 +38,7 @@ public class Inscription extends Activity {
         	                HttpClient httpclient = new DefaultHttpClient();
         	                
         	                // 2. make POST request to the given URL
-        	                HttpPost httpPost = new HttpPost("http://192.168.1.96/equipe/add/" +((EditText) findViewById(R.id.NomTexte)).getText().toString() +"/"+((EditText)findViewById(R.id.editText2)).getText().toString());
+        	                HttpPost httpPost = new HttpPost("http://192.168.4.68/equipe/add/" +((EditText) findViewById(R.id.NomTexte)).getText().toString() +"/"+((EditText)findViewById(R.id.editText2)).getText().toString());
 
         	                // 8. Execute POST request to the given URL
         	                httpclient.execute(httpPost);

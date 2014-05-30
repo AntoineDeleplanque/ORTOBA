@@ -23,7 +23,7 @@ exports.addEquipe = function(nom, ville, callback) {
         callback);
 };
 
-exports.addMacth = function(IdEquipe1, ScoreEquipe1, IdEquipe2, ScoreEquipe2, callback) {
+exports.addMatch = function(IdEquipe1, ScoreEquipe1, IdEquipe2, ScoreEquipe2, callback) {
     db.insert('matchs', { id_equipe_1 : IdEquipe1, resultat_equipe_1 : ScoreEquipe1, id_equipe_2 : IdEquipe2, resultat_equipe_2 : ScoreEquipe2 },
         callback);
 };
