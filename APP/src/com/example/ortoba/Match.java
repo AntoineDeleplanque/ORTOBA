@@ -13,8 +13,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -64,13 +62,13 @@ public class Match extends Activity {
         	                HttpClient httpclient = new DefaultHttpClient();
         	                
         	                // 2. make POST request to the given URL
-        	                HttpPost httpPost = new HttpPost("http://192.168.4.68/match/add/"+((equipe)spin1.getSelectedItem()).id_equipe+"/"+((EditText) findViewById(R.id.editText1)).getText()+"/"+((equipe)spin2.getSelectedItem()).id_equipe+"/"+((EditText) findViewById(R.id.editText2)).getText());
+        	                HttpPost httpPost = new HttpPost("http://192.168.160.16/match/add/"+((equipe)spin1.getSelectedItem()).id_equipe+"/"+((EditText) findViewById(R.id.editText1)).getText()+"/"+((equipe)spin2.getSelectedItem()).id_equipe+"/"+((EditText) findViewById(R.id.editText2)).getText());
 
         	                // 8. Execute POST request to the given URL
         	                httpclient.execute(httpPost);
         	     
                     	} catch (Exception e) {
-                    		Log.d("InputStream", e.getLocalizedMessage());
+                    		//Log.d("InputStream", e.getLocalizedMessage());
                     	}
                     }
                  })

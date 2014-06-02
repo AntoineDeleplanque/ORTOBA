@@ -1,7 +1,7 @@
 {
-    "user" : "root",
-    "password" : "",
+    "user" : "Connect",
+    "password" : "Connect",
     "database" : "ortoba",
-    "host" : "localhost",
+    "host" : "23.97.210.180",
     "port" : 3306
 }

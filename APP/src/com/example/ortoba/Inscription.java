@@ -1,7 +1,6 @@
 package com.example.ortoba;
 
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 
@@ -38,13 +37,13 @@ public class Inscription extends Activity {
         	                HttpClient httpclient = new DefaultHttpClient();
         	                
         	                // 2. make POST request to the given URL
-        	                HttpPost httpPost = new HttpPost("http://192.168.4.68/equipe/add/" +((EditText) findViewById(R.id.NomTexte)).getText().toString() +"/"+((EditText)findViewById(R.id.editText2)).getText().toString());
+        	                HttpPost httpPost = new HttpPost("http://192.168.160.16/equipe/add/" +((EditText) findViewById(R.id.NomTexte)).getText().toString() +"/"+((EditText)findViewById(R.id.editText2)).getText().toString());
 
         	                // 8. Execute POST request to the given URL
         	                httpclient.execute(httpPost);
         	     
                     	} catch (Exception e) {
-                    		Log.d("InputStream", e.getLocalizedMessage());
+                    		//Log.d("InputStream", e.getLocalizedMessage());
                     	}
                     }
                  })

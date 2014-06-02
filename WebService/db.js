@@ -1,3 +1,4 @@
+//init some framework/library/dependency
 var mysql = require('mysql');
 
 var fs = require('fs');

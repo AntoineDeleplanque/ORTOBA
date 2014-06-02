@@ -6,8 +6,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -22,14 +20,14 @@ public class WebService {
 	private InputStream sendRequest(URL url) throws Exception {
 
 		try {
-			// Ouverture de la connexion
+			 //Ouverture de la connexion
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
-			// Connexion à l'url
+			 //Connexion à l'url
 			urlConnection.connect();
 
-			// Si le serveur nous répond avec un code OK
-			if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+			 //Si le serveur nous répond avec un code OK
+		if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
 				return urlConnection.getInputStream();
 			}
 		} catch (Exception e) {
@@ -65,7 +63,7 @@ public class WebService {
 	
 	/*** LA TU RECUPERES ET CONSTRUIS TON OBJET AVEC getNOMDELOBJET ***/
 	public List<equipe> getEquipe(){
-		String URL = "http://192.168.4.68/equipe/classement";
+		String URL = "http://192.168.160.16/equipe/classement";
 		// Url du json
 		
 		try {
@@ -78,6 +76,7 @@ public class WebService {
 				InputStreamReader reader = new InputStreamReader(inputStream);
 				
 				// Return la liste désérialisée par le moteur gson 
+				
 				
 				return gson.fromJson(reader, new TypeToken<List<equipe>>(){}.getType());
 			}

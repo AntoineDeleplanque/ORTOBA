@@ -1,3 +1,4 @@
+// init dependency
 var db = require('./db.js');
 
 var columnNameRegex = /^([a-zA-Z0-9_$]{1,64}\.)?[a-zA-Z0-9_$]{1,64}$/;
@@ -14,6 +15,7 @@ function checkColumns(obj){
     return true;
 }
 
+// some methode who call app.js it's this function with db.js who request in MySql database
 exports.getEquipes = function(callback){
     db.findAll('equipes', callback);
 };
